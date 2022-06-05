@@ -1,6 +1,12 @@
 # bayesian_neural_network
 
+we have to check some point 
+
+# first. noise assumption
+
 in fitting problem, we don't have to use noise assumption, but in regression using noise assumption make problem tractable. so in bayesian neural network, we assume there is noise between output F and target Y.
+
+# second. parameter w to update
 
 prml 3.55
 
@@ -26,7 +32,9 @@ we already have the form of auxiliary variable $ w + \Delta w $ and we don't hav
 
 so we make w in $ logp(Y|X,w) $ follows $ w + \Delta w $ and w in $ KL(q(w)||"p(w)") $ follows w
 
-by clt
+# third. is that can be gaussian process?
+
+the output never can be gaussian so this model can't learn gaussian process. but this model can approximate gaussian process by clt
 
 <img width="559" alt="스크린샷 2022-06-05 오후 10 49 02" src="https://user-images.githubusercontent.com/24292848/172053919-81ed5d46-58ac-4c32-bbea-f8f7d90a0384.png">
 
