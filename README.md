@@ -1,5 +1,7 @@
 # bayesian_neural_network
 
+in fitting problem, we don't have to use noise assumption, but in regression using noise assumption make problem tractable. so in bayesian neural network, we assume there is noise between output F and target Y.
+
 prml 3.55
 
 we can get log posterior distribution by adding log prior and log likelihood
