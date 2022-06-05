@@ -30,7 +30,7 @@ by clt
 
 <img width="559" alt="스크린샷 2022-06-05 오후 10 49 02" src="https://user-images.githubusercontent.com/24292848/172053919-81ed5d46-58ac-4c32-bbea-f8f7d90a0384.png">
 
-if $ W^1_j $ are iid distributed and n goes infinitely, output follows gaussian distribution.
+no matter how $W^2_j$ $W^1_i$ behaves, if $ W^1_j $ are iid distributed and n goes infinitely, output follows gaussian distribution.
 but, in that situation, that model only can learn linear relation between input and output data
 so we have to add one linear layer or one bayesian linear layer to learn nonlinear relationship.
 
