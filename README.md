@@ -11,6 +11,6 @@ then w in likelihood term $w^T \phi (x_n)$ and prior term ${\alpha \over 2} w^2 
 
 in dropout as a bayesian approximation appendix, we have to maximize elbo term
 
-$$ \int q(w) logp(Y|X,w),dw$$
+$$ \int q(w) logp(Y|X,w)dw - KL(q(w)||p(w)) $$
 
 
