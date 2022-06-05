@@ -37,3 +37,4 @@ because of iid assumption.
 
 so we have to add one more linear layer or one more bayesian linear layer to learn nonlinear relationship.
 
+but if we use lindeberg clt, we don't have to care about how $ W^1_j $ behave too. so we can impose non linear learning ability to this model without using additional layer
