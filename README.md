@@ -14,4 +14,9 @@ in dropout as a bayesian approximation appendix, we have to maximize elbo term
 
 $$ \int q(w) logp(Y|X,w)dw - KL(q(w)||p(w)) $$
 
+in here the w in likelihood term $ logp(Y|X,w) $ and w in prior term $ p(w) $ behave differentely.
+
+in 3.55 that formual is like $ w_d = w_d + \alpha {d \over dw_d} f(x) $
+
+in elbo, formula is like find \Delta w to maximize $ "f(w + \Delta w)" $ so we can make w in logp(Y|X,w)dw follows $ w + \Delta w $ and w in $ KL(q(w)||"p(w)") $ follows w
 
