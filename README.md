@@ -53,4 +53,11 @@ in the dropout paper, auther make output to be mean value of hidden layer units 
 
 this paper make kernel 
 
-$$ \widehat{K} = {1 \over K} \sum^K_{k=1} \sigma (w^T_k x + b_k) \sigma (w^T_k x + b_k)$$
+$$ \widehat{K} = {1 \over K} \sum^K_{k=1} \sigma (w^T_k x + b_k) \sigma (w^T_k y + b_k)$$
+
+but use this is better
+
+$$ \widehat{K} = \sum^K_{k=1} \sigma (w^T_k x_1 + b_k) \sigma (w^T_k x_2 + b_k)$$
+
+i just subtract K and change notation y this can be confused.
+
