@@ -2,11 +2,11 @@
 
 we have to check some point 
 
-# first. noise assumption
+# noise assumption
 
 in fitting problem, we don't have to use noise assumption, but in regression using noise assumption make problem tractable. so in bayesian neural network, we assume there is noise between output F and target Y.
 
-# second. parameter w to update
+# parameter w to update
 
 prml 3.55
 
@@ -32,7 +32,7 @@ we already have the form of auxiliary variable $ w + \Delta w $ and we don't hav
 
 so we make w in $ logp(Y|X,w) $ follows $ w + \Delta w $ and w in $ KL(q(w)||"p(w)") $ follows w
 
-# third. is that can be gaussian process?
+# is that can be gaussian process?
 
 the output never can be gaussian so this model can't learn gaussian process. but this model can approximate gaussian process by clt
 
@@ -49,7 +49,9 @@ but if we use lindeberg clt, we don't have to care about how $ W^1_j $ behave to
 
 # do we need to expected value of hidden units?
 
-in the dropout paper, auther make output to be mean value of hidden layer units which is concept of clt. but actually we don't need to get mean value, we can just sum of it. 
+in the dropout paper, auther make output to be mean value of hidden layer units which is concept of clt. 
+
+but actually we don't need to get mean value, we can just sum of it. 
 
 this paper make kernel 
 
@@ -61,3 +63,11 @@ $$ \widehat{K} (x_1,x_2)= \sum^K_{k=1} \sigma (w^T_k x_1 + b_k) \sigma (w^T_k x_
 
 i just subtract K and change notation y this can be confused.
 
+# some other change
+
+the entropy of a mixture of Gaussians with a large enough dimensionality and randomly distributed means tends towards the sum of the Gaussians’ volumes
+
+
+
+
+i just use gaussian model not gaussian mixture. using gaussina mixture 
