@@ -46,3 +46,11 @@ because of iid assumption.
 so we have to add one more linear layer or one more bayesian linear layer to learn nonlinear relationship.
 
 but if we use lindeberg clt, we don't have to care about how $ W^1_j $ behave too. so we can impose non linear learning ability to this model without using additional layer
+
+# do we need to expected value of hidden units?
+
+in the dropout paper, auther make output to be mean value of hidden layer units which is concept of clt. but actually we don't need to get mean value, we can just sum of it. 
+
+the paper make kernel 
+
+$$ \widehat{K} = {1 \over K} \sum^K_{k=1} \sigma $$
