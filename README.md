@@ -51,6 +51,6 @@ but if we use lindeberg clt, we don't have to care about how $ W^1_j $ behave to
 
 in the dropout paper, auther make output to be mean value of hidden layer units which is concept of clt. but actually we don't need to get mean value, we can just sum of it. 
 
-the paper make kernel 
+this paper make kernel 
 
-$$ \widehat{K} = {1 \over K} \sum^K_{k=1} \sigma $$
+$$ \widehat{K} = {1 \over K} \sum^K_{k=1} \sigma (w^T_k x + b_k) \sigma (w^T_k x + b_k)$$
