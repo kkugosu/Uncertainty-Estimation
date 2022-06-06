@@ -79,3 +79,9 @@ to make calculate this, we need to make sigma(var) really small. this paper use 
 so if we train model with dropout and use model with dropout, then it is same as learning gaussian process.
 
 but in this time, i will use single gaussian assumption to practice.
+
+# now
+
+we just have to maximize 
+
+$$ - \sum^D_{d=1} \tau || y_d - \Phi w_d || $$
