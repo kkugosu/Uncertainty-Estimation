@@ -63,11 +63,17 @@ $$ \widehat{K} (x_1,x_2)= \sum^K_{k=1} \sigma (w^T_k x_1 + b_k) \sigma (w^T_k x_
 
 i just subtract K and change notation y this can be confused.
 
-# some other change
+# some other change, other assumption
+
+we don't use dropout. we use dropconnect which is more theoretically fitted.
 
 the entropy of a mixture of Gaussians with a large enough dimensionality and randomly distributed means tends towards the sum of the Gaussians’ volumes
 
+this statements is this
+![kld](https://user-images.githubusercontent.com/24292848/172194266-970c554a-c9fb-49aa-9f40-631a9e7ce684.jpeg)
 
+to make calculate this, we need to make sigma(var) really small. this paper use 10^-33
 
+so if we train model with dropout and use model with dropout, then it is same as learning gaussian process.
 
-i just use gaussian model not gaussian mixture. using gaussina mixture 
+but in this time, i will use single gaussian assumption to practice.
