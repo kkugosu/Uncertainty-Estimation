@@ -84,4 +84,4 @@ but in this time, i will use single gaussian assumption to practice.
 
 we just have to maximize 
 
-$$ - \sum^D_{d=1} \tau || y_d - \Phi w_d || $$
+$$ - \sum^D_{d=1} \tau || y_d - \Phi w_d ||^2_2 $$
