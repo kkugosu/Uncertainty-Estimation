@@ -67,6 +67,8 @@ i just subtract K and change notation y this can be confused.
 
 we don't use dropout. we use dropconnect which is more theoretically fitted.
 
+but we call dropconnect as dropout haha
+
 the entropy of a mixture of Gaussians with a large enough dimensionality and randomly distributed means tends towards the sum of the Gaussians’ volumes
 
 this statements is this
