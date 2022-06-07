@@ -4,7 +4,9 @@ we have to check some point
 
 # noise assumption
 
-in fitting problem, we don't have to use noise assumption, but in regression using noise assumption make problem tractable. so in bayesian neural network, we assume there is noise between output F and target Y.
+in fitting problem, we don't have to use noise assumption, but in regression we gradually develop the model to make less error. 
+
+using noise assumption make problem tractable. so in bayesian neural network, we assume there is noise between output F and target Y.
 
 # parameter w to update
 
@@ -49,7 +51,9 @@ but if we use lindeberg clt, we don't have to care about how $ W^1_j $ behave to
 
 # do we need to expected value of hidden units?
 
-in the dropout paper, auther make output to be mean value of hidden layer units which is concept of clt. 
+in the dropout paper, auther 
+
+output to be mean value of hidden layer units which is concept of clt. 
 
 but actually we don't need to get mean value, we can just sum of it. 
 
@@ -74,7 +78,7 @@ the entropy of a mixture of Gaussians with a large enough dimensionality and ran
 this statements is this
 ![kld](https://user-images.githubusercontent.com/24292848/172194266-970c554a-c9fb-49aa-9f40-631a9e7ce684.jpeg)
 
-to make calculate this, we need to make sigma(var) really small. this paper use 10^-33
+to calculate this, we need to make sigma(var) really small. this paper use 10^-33
 
 so if we train model with dropout and use model with dropout, then it is same as learning gaussian process.
 
