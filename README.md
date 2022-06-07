@@ -82,7 +82,7 @@ but in this time, i will use single gaussian assumption to practice.
 
 # now
 
-if we trim the elbo and subtract constant ($\sigma , \tau$...) term,
+if we trim the elbo and subtract constant ($\sigma = 1, \tau$...) term,
 
 then we just have to maximize below
 
