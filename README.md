@@ -84,6 +84,6 @@ but in this time, i will use single gaussian assumption to practice.
 
 we just have to maximize below
 
-$$ - \sum^D_{d=1} \tau || y_d - \Phi w_d ||^2_2 + \sum^Q \sum^K (\mu_{1,q,k} - \mu_{1,q,k} ')^2 + \sum^K \sum^D (\mu_{2,k,d} - \mu_{2,k,d} ')^2 $$
+$$ - \sum^D_{d=1} \tau || y_d - \Phi w_d ||^2_2 + \sum^Q \sum^K (\mu_{1,q,k} - \mu_{1,q,k} ')^2 + \sum^K \sum^D (\mu_{2,k,d} - \mu_{2,k,d} ')^2 \sum^K (\mu_{b,k} - \mu_{b,k} ')^2$$
 
 
