@@ -29,11 +29,11 @@ in here the w in likelihood term $logp(Y|X,w) $ and w in prior term $p(w) $ beha
 
 in 3.55 that formual is like $w_d = w_d + \alpha {d \over dw_d} f(x) $
 
-in elbo, formula is like find $\Delta w $  to maximize $ f(w + \Delta w) $ 
+in elbo, formula is like find $\Delta w$  to maximize $f(w + \Delta w)$ 
 
 we already have the form of auxiliary variable $w + \Delta w $ and we don't have to get derivative form of elbo.
 
-so we make w in $logp(Y|X,w) $ follows $w + \Delta w $ and w in $ KL(q(w)||"p(w)") $ follows w
+so we make w in $logp(Y|X,w) $ follows $w + \Delta w $ and w in $KL(q(w)||"p(w)")$ follows w
 
 # is that can be gaussian process?
 
