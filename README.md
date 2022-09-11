@@ -27,7 +27,7 @@ $$ \int q(w) logp(Y|X,w)dw - KL(q(w)||p(w)) $$
 
 in here the w in likelihood term $logp(Y|X,w) $ and w in prior term $p(w) $ behave differentely.
 
-in 3.55 that formual is like $w_d = w_d + \alpha {d \over dw_d} f(x) $
+in 3.55 that formula is like $w_d = w_d + \alpha {d \over dw_d} f(x) $
 
 in elbo, formula is like find $\Delta w$  to maximize $f(w + \Delta w)$ 
 
