@@ -6,7 +6,7 @@ we have to check some point
 
 in fitting problem, we don't have to use noise assumption, but in regression we gradually develop the model to make less error. 
 
-using noise assumption make regression possible. so in bayesian neural network, we assume there is noise between output F and target Y.
+noise assumption make it possible to update gradually. so in bayesian neural network, we assume there is noise between output F and target Y.
 
 # parameter w to update
 
