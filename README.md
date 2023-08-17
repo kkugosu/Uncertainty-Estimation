@@ -50,31 +50,31 @@ So we have to add one more linear layer or one more bayesian linear layer to lea
 
 but if we use "lindeberg clt", we don't have to care about how $W^1_j $ behave too. so we can impose non linear learning ability to this model without adding layer
 
-# do we need to expected value of hidden units?
+# Do we need to assume output as expected value of hidden units?
 
-in the dropout paper, auther 
+In the dropout paper, auther make output to be mean value of hidden layer units which is concept of clt. 
 
-output to be mean value of hidden layer units which is concept of clt. 
-
-but actually we don't need to get mean value, we can just sum of it. 
+But actually we don't need to get mean value, we can just sum of it. 
 
 this paper make kernel 
 
 $$ \widehat{K} (x,y) = {1 \over K} \sum^K_{k=1} \sigma (w^T_k x + b_k) \sigma (w^T_k y + b_k)$$
 
-but use this is better
+But using below one becomes better
 
 $$ \widehat{K} (x_1,x_2)= \sum^K_{k=1} \sigma (w^T_k x_1 + b_k) \sigma (w^T_k x_2 + b_k)$$
 
-i just subtract K and change notation y this can be confused.
+I just subtract K,
 
-# some other change, other assumption
+Change notation y as x to avoid confusing.
 
-we don't use dropout. we use dropconnect which is more theoretically fitted.
+# Some other change, other assumption
 
-but we call dropconnect as dropout haha
+We don't use dropout. We use dropconnect which is more theoretically fitted.
 
-the entropy of a mixture of Gaussians with a large enough dimensionality and randomly distributed means tends towards the sum of the Gaussians’ volumes
+Wut we call dropconnect as dropout lol.
+
+The entropy of a mixture of Gaussians with a large enough dimensionality and randomly distributed means tends towards the sum of the Gaussians’ volumes
 
 this statements is this
 ![kld](https://user-images.githubusercontent.com/24292848/172194266-970c554a-c9fb-49aa-9f40-631a9e7ce684.jpeg)
