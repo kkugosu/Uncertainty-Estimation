@@ -35,7 +35,7 @@ we already have the form of auxiliary variable $w + \Delta w $ and we don't have
 
 so we make W in logp(Y|X,w) follows $w + \Delta w $, W in p(w) follows w
 
-# is that can be gaussian process?
+# Is that can be gaussian process?
 
 The output never become gaussian so this model can't be gaussian process. But this model can approximate gaussian process by clt.
 
