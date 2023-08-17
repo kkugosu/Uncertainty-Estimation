@@ -37,18 +37,18 @@ so we make W in logp(Y|X,w) follows $w + \Delta w $, W in p(w) follows w
 
 # is that can be gaussian process?
 
-the output never can be gaussian so this model can't learn gaussian process. but this model can approximate gaussian process by clt
+The output never become gaussian so this model can't be gaussian process. But this model can approximate gaussian process by clt.
 
 <img width="559" alt="스크린샷 2022-06-05 오후 10 49 02" src="https://user-images.githubusercontent.com/24292848/172053919-81ed5d46-58ac-4c32-bbea-f8f7d90a0384.png">
 
-no matter how $W^2_j$ $W^1_i$ behaves, if $W^1_j $ are iid distributed and n goes infinitely, output follows gaussian distribution.
+No matter how $W^2_j$ $W^1_i$ behaves, if $W^1_j $ are iid distributed and n goes infinitely, output follows gaussian distribution.
 
-but, in that situation, that model only can learn linear relation between input and output data
+But, in that situation, that model only learn linear relation between input and output data
 because of iid assumption.
 
-so we have to add one more linear layer or one more bayesian linear layer to learn nonlinear relationship.
+So we have to add one more linear layer or one more bayesian linear layer to learn nonlinear relationship.
 
-but if we use lindeberg clt, we don't have to care about how $W^1_j $ behave too. so we can impose non linear learning ability to this model without using additional layer
+but if we use "lindeberg clt", we don't have to care about how $W^1_j $ behave too. so we can impose non linear learning ability to this model without adding layer
 
 # do we need to expected value of hidden units?
 
