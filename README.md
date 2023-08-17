@@ -74,23 +74,23 @@ We don't use dropout. We use dropconnect which is more theoretically fitted.
 
 Wut we call dropconnect as dropout lol.
 
-The entropy of a mixture of Gaussians with a large enough dimensionality and randomly distributed means tends towards the sum of the Gaussians’ volumes
+The entropy of a mixture of Gaussians with a large enough dimensionality and randomly distributed means approximate to the sum of the Gaussians’ volumes
 
 this statements is this
 ![kld](https://user-images.githubusercontent.com/24292848/172194266-970c554a-c9fb-49aa-9f40-631a9e7ce684.jpeg)
 
-to calculate this, we need to make sigma(var) really small. this paper use 10^-33
+To calculate this, we need to put sigma(var) as really small. This paper use 10^-33.
 
-so if we train model with dropout and use model with dropout, then it is same as learning gaussian process.
+So if we train model with dropout and use model with dropout, then it is same as learning gaussian process.
 
-but in this time, i will use single gaussian assumption to practice.
+But in this time, i will use single gaussian assumption to practice.
 
-# now
+# Conclusion
 
-if we trim the elbo and subtract constant ($\sigma = 1, \tau$...) term,
+If we trim the ELBO and subtract constant ($\sigma = 1, \tau$...) term,
 
-then we just have to maximize below
+Then we just have to maximize below
 
 $$ - \sum^N_{n=1} \tau || y_n - \widehat{y_n} ||^2_2 + \sum^Q \sum^K (\mu_{1,q,k} - \mu_{1,q,k} ')^2 + \sum^K \sum^D (\mu_{2,k,d} - \mu_{2,k,d} ')^2 + \sum^K (\mu_{b,k} - \mu_{b,k} ')^2$$
 
-in this project, i set sigma = 0.1
+In this project, i set sigma as 0.1
