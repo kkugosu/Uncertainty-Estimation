@@ -8,13 +8,13 @@ In fitting problem, we don't need noise assumption, but when it comes to regress
 
 Noise assumption make it possible to update gradually. so in bayesian neural network, we assume there is noise between output F and target Y.
 
-# parameter w to update
+# Update Parameter W
 
-prml 3.55
+PRML 3.3 Bayesian Linear Regression formula (3.55)
 
-we can get log posterior distribution by adding log prior and log likelihood
+We can express log posterior distribution as addition of log prior and log likelihood
 
-$$ lnp(w|t) = -{\beta \over 2} \sum^N_{n=1} {t_n - w^T \phi (x_n)}^2 - {\alpha \over 2} w^2 w + const $$
+$$ ln(p(w|t)) = -{\beta \over 2} \sum^N_{n=1} {t_n - w^T \phi (x_n)}^2 - {\alpha \over 2} w^2 w + const $$
 
 and we can regress posterior distribution by subtracting derivative of log posterior with respect to "w"
 
