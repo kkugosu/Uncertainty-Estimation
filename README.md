@@ -27,13 +27,13 @@ $$ \int q(w) logp(Y|X,w)dw - KL(q(w)||p(w)) $$
 
 In here, the W in likelihood term $logp(Y|X,w) $ and W in prior term $p(w) $ behave differentely.
 
-Fomula (3.55) is like $w_d = w_d + \alpha {d \over dw_d} f(x) $
+W in fomula (3.55) is like $w_d = w_d + \alpha {d \over dw_d} f(x) $
 
-in elbo, formula is like find $\Delta w$  to maximize $f(w + \Delta w)$ 
+In ELBO, formula is like finding $\Delta w$ to maximize $f(w + \Delta w)$ 
 
-we already have the form of auxiliary variable $w + \Delta w $ and we don't have to get derivative form of elbo.
+we already have the form of auxiliary variable $w + \Delta w $ and we don't have to get derivative form of ELBO.
 
-so we make w in $logp(Y|X,w) $ follows $w + \Delta w $ and w in $KL(q(w)||"p(w)")$ follows w
+so we make W in logp(Y|X,w) follows $w + \Delta w $, W in p(w) follows w
 
 # is that can be gaussian process?
 
