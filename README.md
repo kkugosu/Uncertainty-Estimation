@@ -1,12 +1,12 @@
-# bayesian_neural_network
+# Bayesian neural network
 
-we have to check some point 
+There are a few things we need to mention
 
-# noise assumption
+# Noise assumption
 
-in fitting problem, we don't have to use noise assumption, but in regression we gradually develop the model to make less error. 
+In fitting problem, we don't need noise assumption, but when it comes to regression, we gradually train the model to make less error. 
 
-noise assumption make it possible to update gradually. so in bayesian neural network, we assume there is noise between output F and target Y.
+Noise assumption make it possible to update gradually. so in bayesian neural network, we assume there is noise between output F and target Y.
 
 # parameter w to update
 
