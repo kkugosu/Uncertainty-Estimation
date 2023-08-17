@@ -18,16 +18,16 @@ $$ ln(p(w|t)) = -{\beta \over 2} \sum^N_{n=1} {t_n - w^T \phi (x_n)}^2 - {\alpha
 
 We can get posterior distribution by subtracting derivative of log posterior with respect to Parameter W
 
-then w in likelihood term $w^T \phi (x_n)$ and prior term 
-${\alpha \over 2} w^2 w$ have to be derivated
+Then W in likelihood term $w^T \phi (x_n)$ and prior term 
+${\alpha \over 2} w^2 w$ should be derivated
 
 In dropout as a bayesian approximation appendix, we have to maximize ELBO term.
 
 $$ \int q(w) logp(Y|X,w)dw - KL(q(w)||p(w)) $$
 
-in here the w in likelihood term $logp(Y|X,w) $ and w in prior term $p(w) $ behave differentely.
+In here, the W in likelihood term $logp(Y|X,w) $ and W in prior term $p(w) $ behave differentely.
 
-in 3.55 that formula is like $w_d = w_d + \alpha {d \over dw_d} f(x) $
+Fomula (3.55) is like $w_d = w_d + \alpha {d \over dw_d} f(x) $
 
 in elbo, formula is like find $\Delta w$  to maximize $f(w + \Delta w)$ 
 
