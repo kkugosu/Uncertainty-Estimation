@@ -1,4 +1,4 @@
-# Dataset discription
+# Dataset Discription
 
 <img width="425" alt="스크린샷 2023-08-23 21 16 22" src="https://github.com/kkugosu/Uncertainty-Estimation/assets/24292848/40bf40a9-f71b-4e3c-9b21-6fd43df11ea6">
 
