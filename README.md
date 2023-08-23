@@ -1,3 +1,16 @@
+# Uncertainty Estimation
+
+you can see some implementations of uncertainty estimation
+
+Gaussian process 
+The performance of which is best of all but estimation time infinitely incereases as data increase
+
+Bayesian Neural Network
+I implemented naive bnn and convolutional bnn
+
+Mixture Density Network
+The most practical model so far
+
 # Bayesian neural network
 
 There are a few things we need to mention
