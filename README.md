@@ -23,7 +23,11 @@ Bayesian Neural Network
 
 <br/>
 I implemented naive bnn and convolutional bnn
+<br/>
+
 <img width="400" alt="스크린샷 2023-08-23 22 32 17" src="https://github.com/kkugosu/Uncertainty-Estimation/assets/24292848/efc70c75-0a6a-4767-bffb-4539c0301f06">
+
+<br/>
 
 the performance of which is not like gaussian process but reduced estimation time
 
