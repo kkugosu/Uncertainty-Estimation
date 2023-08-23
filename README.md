@@ -4,6 +4,8 @@ you can see some implementations of uncertainty estimation
 
 Gaussian process 
 > [GP](Docs/gaussian process.md)
+>
+
 The performance of which is best of all but estimation time infinitely incereases as data increase
 
 Bayesian Neural Network
