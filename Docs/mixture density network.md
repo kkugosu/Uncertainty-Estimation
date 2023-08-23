@@ -1,1 +1,1 @@
-dd
+Learning Gaussian Mixture Model
