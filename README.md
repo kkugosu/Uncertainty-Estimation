@@ -1,3 +1,7 @@
+# Dataset discription
+
+<img width="425" alt="스크린샷 2023-08-23 21 16 22" src="https://github.com/kkugosu/Uncertainty-Estimation/assets/24292848/40bf40a9-f71b-4e3c-9b21-6fd43df11ea6">
+
 # Uncertainty Estimation
 
 you can see some implementations of uncertainty estimation
@@ -33,4 +37,4 @@ Mixture Density Network
 
 Doesn't have noise assumption so we need more data but The most practical model so far
 
-
+<img width="475" alt="스크린샷 2023-08-23 18 30 26" src="https://github.com/kkugosu/Uncertainty-Estimation/assets/24292848/e821b083-e3b0-48c8-9d28-4023650d8881">
