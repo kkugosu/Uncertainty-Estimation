@@ -8,7 +8,10 @@ The performance of which is best of all but estimation time infinitely incerease
 <br/>
 Bayesian Neural Network
 > [BNN](https://github.com/kkugosu/Uncertainty-Estimation/blob/master/Docs/bayesian%20neural%20network.md)
+> 
+<br/>
 I implemented naive bnn and convolutional bnn
+<br/>
 the performance of which is not like gaussian process but reduced estimation time
 
 Mixture Density Network
