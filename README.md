@@ -5,6 +5,9 @@ you can see some implementations of uncertainty estimation
 Gaussian process 
 > [GP](https://github.com/kkugosu/Uncertainty-Estimation/blob/master/Docs/gaussian%20process.md)
 
+
+<img width="293" alt="스크린샷 2023-08-23 21 14 45" src="https://github.com/kkugosu/Uncertainty-Estimation/assets/24292848/47869263-aac6-4573-a59f-5ea06c384987">
+
 <br/>
 
 The performance of which is best of all but estimation time infinitely incereases as data increase
