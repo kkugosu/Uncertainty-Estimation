@@ -18,12 +18,15 @@ Bayesian Neural Network
 I implemented naive bnn and convolutional bnn
 
 <br/>
+
 the performance of which is not like gaussian process but reduced estimation time
+
 <br/>
+
 Mixture Density Network
-<br/>
 > [MDN](https://github.com/kkugosu/Uncertainty-Estimation/blob/master/Docs/mixture%20density%20network.md)
 
+<br/>
 
 Doesn't have noise assumption so we need more data but The most practical model so far
 
