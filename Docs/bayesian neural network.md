@@ -12,7 +12,7 @@ Bayesian Neural Networks offer a probabilistic take on traditional neural networ
 6. [Conclusion](#conclusion)
 ---
 
-## Noise Assumption
+## 📝 Noise Assumption
 
 In most fitting problems, a noise assumption might not be necessary. However, regression problems demand a different approach. As we train the model, the objective is to reduce the error progressively.
 
@@ -20,7 +20,7 @@ The noise assumption in a BNN makes this gradual update feasible. Specifically, 
 
 ---
 
-## Update Parameter W
+## 📝 Update Parameter W
 
 Drawing from the Bayesian Linear Regression formula (3.55) in PRML 3.3:
 
@@ -49,7 +49,7 @@ Certainly, I've reformatted the content while ensuring the image file links rema
 ---
 
 
-## Gaussian Process Approximation
+## 📝 Gaussian Process Approximation
 
 While this model's output doesn't conform to a Gaussian distribution, it can approximate a Gaussian process through the Central Limit Theorem (CLT).
 
@@ -57,7 +57,7 @@ While this model's output doesn't conform to a Gaussian distribution, it can app
 
 Regardless of the behavior of \(W^2_j\) \(W^1_i\), if \(W^1_j\) are identically and independently distributed and as \(n\) approaches infinity, the output adopts a Gaussian distribution. However, under these conditions, the model can only capture linear relations between inputs and outputs due to the IID assumption. To cater for non-linearity, we could introduce an additional linear or Bayesian linear layer. But with the Lindeberg CLT, we're free from the specifics of \(W^1_j\)'s behavior, enabling non-linear learning without adding extra layers.
 
-## Hidden Units Output Assumption
+## 📝 Hidden Units Output Assumption
 
 The original dropout paper proposed modeling the output as the expected value of the hidden layer units, reflecting the CLT concept.
 
@@ -67,7 +67,7 @@ a more effective approach might be:
 \[ \widehat{K} (x_1,x_2) = \sum^K_{k=1} \sigma (w^T_k x_1 + b_k) \sigma (w^T_k x_2 + b_k) \]
 This is achieved simply by omitting \(K\), and changing the notation from \(y\) to \(x\) for clarity.
 
-## Model Adjustments and Assumptions
+## 📝 Model Adjustments and Assumptions
 
 Instead of dropout, we employ dropconnect for a better theoretical fit, though, ironically, we still term it as 'dropout'. A pertinent observation: the entropy of a mixture of Gaussians, with sufficiently large dimensionality and random mean distributions, approaches the collective volume of these Gaussians.
 
@@ -75,7 +75,7 @@ Instead of dropout, we employ dropconnect for a better theoretical fit, though, 
 
 For effective calculation, the paper uses a significantly small sigma value (\(10^{-33}\)). Therefore, training with dropout and subsequently using the dropout model equates to learning via a Gaussian process. However, for this exploration, a single Gaussian assumption is preferred.
 
-## Conclusion
+## 📝 Conclusion
 
 By trimming the ELBO and excluding constant terms (like \(\sigma = 1, \tau...\)), our objective becomes the maximization of:
 
