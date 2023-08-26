@@ -1,39 +1,46 @@
-# Bayesian neural network
 
-There are a few things we need to mention
+# Bayesian Neural Network (BNN)
 
-# Noise assumption
+Bayesian Neural Networks offer a probabilistic take on traditional neural network structures, integrating prior beliefs and uncertainties about model parameters directly into the network. This document touches on some critical aspects of Bayesian Neural Networks, including the noise assumption and parameter updating.
 
-In fitting problem, we don't need noise assumption, but when it comes to regression, we gradually train the model to make less error. 
+## Table of Contents
+1. [Noise Assumption](#noise-assumption)
+2. [Update Parameter W](#update-parameter-w)
 
-Noise assumption make it possible to update gradually. so in bayesian neural network, we assume there is noise between output F and target Y.
+---
 
-# Update Parameter W
+## Noise Assumption
 
-PRML 3.3 Bayesian Linear Regression formula (3.55)
+In most fitting problems, a noise assumption might not be necessary. However, regression problems demand a different approach. As we train the model, the objective is to reduce the error progressively.
 
-We can express log posterior distribution as addition of log prior and log likelihood
+The noise assumption in a BNN makes this gradual update feasible. Specifically, it posits that there exists some noise between the output \( F \) and the target \( Y \).
 
-$$ ln(p(w|t)) = -{\beta \over 2} \sum^N_{n=1} {t_n - w^T \phi (x_n)}^2 - {\alpha \over 2} w^2 w + const $$
+---
 
-We can get posterior distribution by subtracting derivative of log posterior with respect to Parameter W
+## Update Parameter W
 
-Then W in likelihood term $w^T \phi (x_n)$ and prior term 
-${\alpha \over 2} w^2 w$ should be derivated
+Drawing from the Bayesian Linear Regression formula (3.55) in PRML 3.3:
 
-In dropout as a bayesian approximation appendix, we have to maximize ELBO term.
+The log posterior distribution can be described as the sum of the log prior and the log likelihood:
 
-$$ \int q(w) logp(Y|X,w)dw - KL(q(w)||p(w)) $$
+\[ ln(p(w|t)) = -{\beta \over 2} \sum^N_{n=1} {t_n - w^T \phi (x_n)}^2 - {\alpha \over 2} w^2 w + const \]
 
-In here, the W in likelihood term $logp(Y|X,w) $ and W in prior term $p(w) $ behave differentely.
+By taking the derivative of the log posterior concerning Parameter \( W \), we can determine the posterior distribution.
 
-W in fomula (3.55) is like $w_d = w_d + \alpha {d \over dw_d} f(x) $
+Here, the \( W \) in the likelihood term \( w^T \phi (x_n) \) and the prior term \( {\alpha \over 2} w^2 w \) should be derived.
 
-In ELBO, formula is like finding $\Delta w$ to maximize $f(w + \Delta w)$ 
+When examining the "dropout as a Bayesian approximation" appendix, our aim is to maximize the ELBO term:
 
-we already have the form of auxiliary variable $w + \Delta w $ and we don't have to get derivative form of ELBO.
+\[ \int q(w) logp(Y|X,w)dw - KL(q(w)||p(w)) \]
 
-so we make W in logp(Y|X,w) follows $w + \Delta w $, W in p(w) follows w
+In this context, the \( W \) in the likelihood term \( logp(Y|X,w) \) and \( W \) in the prior term \( p(w) \) have distinct behaviors:
+
+- In formula (3.55): \( w_d = w_d + \alpha {d \over dw_d} f(x) \)
+  
+- For the ELBO, the formula seems to identify a \( \Delta w \) to maximize \( f(w + \Delta w) \). Here, we have the auxiliary variable form \( w + \Delta w \) already, negating the need to derive the ELBO form.
+
+Thus, while \( W \) in \( logp(Y|X,w) \) follows the \( w + \Delta w \) form, \( W \) in \( p(w) \) simply follows \( w \).
+
 
 # Is that can be gaussian process?
 
