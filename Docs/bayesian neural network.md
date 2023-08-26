@@ -6,7 +6,10 @@ Bayesian Neural Networks offer a probabilistic take on traditional neural networ
 ## Table of Contents
 1. [Noise Assumption](#noise-assumption)
 2. [Update Parameter W](#update-parameter-w)
-
+1. [Gaussian Process Approximation](#introduction)
+2. [Hidden Units Output Assumption](#hidden-units-output-assumption)
+3. [Model Adjustments and Assumptions](#model-adjustments-and-assumptions)
+4. [Conclusion](#conclusion)
 ---
 
 ## Noise Assumption
@@ -46,7 +49,7 @@ Certainly, I've reformatted the content while ensuring the image file links rema
 ---
 
 
-# Gaussian Process Approximation in Neural Models
+## Gaussian Process Approximation
 
 While this model's output doesn't conform to a Gaussian distribution, it can approximate a Gaussian process through the Central Limit Theorem (CLT).
 
