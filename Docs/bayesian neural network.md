@@ -41,63 +41,42 @@ In this context, the \( W \) in the likelihood term \( logp(Y|X,w) \) and \( W \
 
 Thus, while \( W \) in \( logp(Y|X,w) \) follows the \( w + \Delta w \) form, \( W \) in \( p(w) \) simply follows \( w \).
 
+Certainly, I've reformatted the content while ensuring the image file links remain unchanged:
 
-# Is that can be gaussian process?
+---
 
-The output never become gaussian so this model can't be gaussian process. But this model can approximate gaussian process by clt.
 
-<img width="559" alt="스크린샷 2022-06-05 오후 10 49 02" src="https://user-images.githubusercontent.com/24292848/172053919-81ed5d46-58ac-4c32-bbea-f8f7d90a0384.png">
+# Gaussian Process Approximation in Neural Models
 
-No matter how $W^2_j$ $W^1_i$ behaves, if $W^1_j $ are iid distributed and n goes infinitely, output follows gaussian distribution.
+While this model's output doesn't conform to a Gaussian distribution, it can approximate a Gaussian process through the Central Limit Theorem (CLT).
 
-But, in that situation, that model only learn linear relation between input and output data
-because of iid assumption.
+![Model Visualization](https://user-images.githubusercontent.com/24292848/172053919-81ed5d46-58ac-4c32-bbea-f8f7d90a0384.png)
 
-So we have to add one more linear layer or one more bayesian linear layer to learn nonlinear relationship.
+Regardless of the behavior of \(W^2_j\) \(W^1_i\), if \(W^1_j\) are identically and independently distributed and as \(n\) approaches infinity, the output adopts a Gaussian distribution. However, under these conditions, the model can only capture linear relations between inputs and outputs due to the IID assumption. To cater for non-linearity, we could introduce an additional linear or Bayesian linear layer. But with the Lindeberg CLT, we're free from the specifics of \(W^1_j\)'s behavior, enabling non-linear learning without adding extra layers.
 
-but if we use "lindeberg clt", we don't have to care about how $W^1_j $ behave too. so we can impose non linear learning ability to this model without adding layer
+## Hidden Units Output Assumption
 
-# Do we need to assume output as expected value of hidden units?
+The original dropout paper proposed modeling the output as the expected value of the hidden layer units, reflecting the CLT concept.
 
-In the dropout paper, auther make output to be mean value of hidden layer units which is concept of clt. 
+Contrary to this, acquiring the mean value isn't always necessary; a simple summation suffices. For instance, while the paper presents the kernel as:
+\[ \widehat{K} (x,y) = {1 \over K} \sum^K_{k=1} \sigma (w^T_k x + b_k) \sigma (w^T_k y + b_k) \]
+a more effective approach might be:
+\[ \widehat{K} (x_1,x_2) = \sum^K_{k=1} \sigma (w^T_k x_1 + b_k) \sigma (w^T_k x_2 + b_k) \]
+This is achieved simply by omitting \(K\), and changing the notation from \(y\) to \(x\) for clarity.
 
-But actually we don't need to get mean value, we can just sum of it. 
+## Model Adjustments and Assumptions
 
-this paper make kernel 
+Instead of dropout, we employ dropconnect for a better theoretical fit, though, ironically, we still term it as 'dropout'. A pertinent observation: the entropy of a mixture of Gaussians, with sufficiently large dimensionality and random mean distributions, approaches the collective volume of these Gaussians.
 
-$$ \widehat{K} (x,y) = {1 \over K} \sum^K_{k=1} \sigma (w^T_k x + b_k) \sigma (w^T_k y + b_k)$$
+![Entropy Illustration](https://user-images.githubusercontent.com/24292848/172194266-970c554a-c9fb-49aa-9f40-631a9e7ce684.jpeg)
 
-But using below one becomes better
+For effective calculation, the paper uses a significantly small sigma value (\(10^{-33}\)). Therefore, training with dropout and subsequently using the dropout model equates to learning via a Gaussian process. However, for this exploration, a single Gaussian assumption is preferred.
 
-$$ \widehat{K} (x_1,x_2)= \sum^K_{k=1} \sigma (w^T_k x_1 + b_k) \sigma (w^T_k x_2 + b_k)$$
+## Conclusion
 
-I just subtract K,
+By trimming the ELBO and excluding constant terms (like \(\sigma = 1, \tau...\)), our objective becomes the maximization of:
 
-Change notation y as x to avoid confusing.
+\[ - \sum^N_{n=1} \tau || y_n - \widehat{y_n} ||^2_2 + \sum^Q \sum^K (\mu_{1,q,k} - \mu_{1,q,k} ')^2 + \sum^K \sum^D (\mu_{2,k,d} - \mu_{2,k,d} ')^2 + \sum^K (\mu_{b,k} - \mu_{b,k} ')^2 \]
 
-# Some other change, other assumption
+For this project, the set value for sigma is 0.1.
 
-We don't use dropout. We use dropconnect which is more theoretically fitted.
-
-Wut we call dropconnect as dropout lol.
-
-The entropy of a mixture of Gaussians with a large enough dimensionality and randomly distributed means approximate to the sum of the Gaussians’ volumes
-
-this statements is this
-![kld](https://user-images.githubusercontent.com/24292848/172194266-970c554a-c9fb-49aa-9f40-631a9e7ce684.jpeg)
-
-To calculate this, we need to put sigma(var) as really small. This paper use 10^-33.
-
-So if we train model with dropout and use model with dropout, then it is same as learning gaussian process.
-
-But in this time, i will use single gaussian assumption to practice.
-
-# Conclusion
-
-If we trim the ELBO and subtract constant ($\sigma = 1, \tau$...) term,
-
-Then we just have to maximize below
-
-$$ - \sum^N_{n=1} \tau || y_n - \widehat{y_n} ||^2_2 + \sum^Q \sum^K (\mu_{1,q,k} - \mu_{1,q,k} ')^2 + \sum^K \sum^D (\mu_{2,k,d} - \mu_{2,k,d} ')^2 + \sum^K (\mu_{b,k} - \mu_{b,k} ')^2$$
-
-In this project, i set sigma as 0.1
