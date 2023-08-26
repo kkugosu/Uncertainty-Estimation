@@ -6,10 +6,10 @@ Bayesian Neural Networks offer a probabilistic take on traditional neural networ
 ## Table of Contents
 1. [Noise Assumption](#noise-assumption)
 2. [Update Parameter W](#update-parameter-w)
-1. [Gaussian Process Approximation](#introduction)
-2. [Hidden Units Output Assumption](#hidden-units-output-assumption)
-3. [Model Adjustments and Assumptions](#model-adjustments-and-assumptions)
-4. [Conclusion](#conclusion)
+3. [Gaussian Process Approximation](#Gaussian Process Approximation)
+4. [Hidden Units Output Assumption](#hidden-units-output-assumption)
+5. [Model Adjustments and Assumptions](#model-adjustments-and-assumptions)
+6. [Conclusion](#conclusion)
 ---
 
 ## Noise Assumption
